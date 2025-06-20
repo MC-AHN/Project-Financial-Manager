@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagram Pendapatan dan Pengeluaran</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+        .chart-container {
+            width: 400px;
+            margin: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="chart-container">
+    <canvas id="incomeChart"></canvas>
+</div>
+
+<div class="chart-container">
+    <canvas id="expenseChart"></canvas>
+</div>
+
+<script>
+    // Data untuk Pendapatan
+    const incomeData = {
+        labels: ['Pendapatan', 'Sisa'],
+        datasets: [{
+            data: [95, 5], // Contoh: 95% pendapatan
+            backgroundColor: ['blue', 'lightgray'],
+            borderWidth: 0
+        }]
+    };
+
+    // Konfigurasi untuk Diagram Pendapatan
+    const incomeConfig = {
+        type: 'doughnut',
+        data: incomeData,
+        options: {
+            cutout: '70%',
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom',
+                },
+                title: {
+                    display: true,
+                    text: 'Pendapatan',
+                    padding: 10
+                }
+            }
+        }
+    };
+
+    // Buat Diagram Pendapatan
+    const incomeChart = new Chart(
+        document.getElementById('incomeChart'),
+        incomeConfig
+    );
+
+    // Data untuk Pengeluaran
+    const expenseData = {
+        labels: ['Pengeluaran', 'Sisa'],
+        datasets: [{
+            data: [12, 88], // Contoh: 12% pengeluaran
+            backgroundColor: ['red', 'lightgray'],
+            borderWidth: 0
+        }]
+    };
+
+    // Konfigurasi untuk Diagram Pengeluaran
+    const expenseConfig = {
+        type: 'doughnut',
+        data: expenseData,
+        options: {
+            cutout: '70%',
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                title: {
+                    display: true,
+                    text: 'Pengeluaran',
+                    padding: 10
+                }
+            }
+        }
+    };
+
+    // Buat Diagram Pengeluaran
+    const expenseChart = new Chart(
+        document.getElementById('expenseChart'),
+        expenseConfig
+    );
+</script>
+
+</body>
+</html>
