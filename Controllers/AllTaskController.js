@@ -70,8 +70,15 @@ async function editData(id) {
   document.getElementById("descriptionB").value = dataUser.description;
   document.getElementById("typeB").value = dataUser.type;
   document.getElementById("totalB").value = dataUser.total;
-  document.getElementById("categoryB").value = dataUser.category;
-  document.getElementById("subCategoryB").value = dataUser.subCategory;
+  if (dataUser.type == "income") {
+    document.getElementById("categoryB").style.display = 'none';
+    document.getElementById("subCategoryB").style.display = 'none';
+    document.getElementById("categoryBLabel").style.display = 'none';
+    document.getElementById("subCategoryBLable").style.display = 'none';
+  } else {
+    document.getElementById("categoryB").value = dataUser.category;
+    document.getElementById("subCategoryB").value = dataUser.subCategory;
+  }
   document.getElementById("dateB").value = dataUser.date;
   render();
 }
