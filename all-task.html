@@ -342,9 +342,7 @@
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  Detail
-                </h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Detail</h1>
                 <button
                   type="button"
                   class="btn-close"
@@ -370,13 +368,15 @@
                 />
 
                 <label for="typeB">Type</label>
-               <select name="typeB" id="typeB" class="form-select mb-2" disabled>
-                <option value="income">Income</option>
-                <option value="expenses">Expenses</option>
-               </select>
-
-                <label for="total">Total</label>
-                <input type="text" name="total" id="totalB" class="form-control my-2">
+                <select
+                  name="typeB"
+                  id="typeB"
+                  class="form-select mb-2"
+                  disabled
+                >
+                  <option value="income">Income</option>
+                  <option value="expenses">Expenses</option>
+                </select>
 
                 <label id="categoryBLabel" for="category">Category</label>
                 <select name="category" id="categoryB" class="form-select mb-2">
@@ -389,10 +389,24 @@
                   </option>
                 </select>
 
-                <label id="subCategoryBLabel" for="subCategory">Sub Category</label>
-                <select name="subCategory" id="subCategoryB" class="form-select my-2">
+                <label id="subCategoryBLabel" for="subCategory"
+                  >Sub Category</label
+                >
+                <select
+                  name="subCategory"
+                  id="subCategoryB"
+                  class="form-select my-2"
+                >
                   <option value="">-- Sub Category --</option>
                 </select>
+
+                <label for="total">Total</label>
+                <input
+                  type="text"
+                  name="total"
+                  id="totalB"
+                  class="form-control my-2"
+                />
 
                 <label for="date">Date</label>
                 <input
@@ -425,7 +439,10 @@
                     class="text-muted"
                     href="https://ppqita.com/"
                     target="_blank"
-                    ><strong>Copyright &copy; 2025 - Financial Manager - by MC-AHN</strong></a
+                    ><strong
+                      >Copyright &copy; 2025 - Financial Manager - by
+                      MC-AHN</strong
+                    ></a
                   >
                 </p>
               </div>

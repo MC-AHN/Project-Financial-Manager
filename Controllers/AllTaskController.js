@@ -77,6 +77,11 @@ async function editData(id) {
     document.getElementById("categoryBLabel").style.display = 'none';
     document.getElementById("subCategoryBLabel").style.display = 'none';
   } else {
+    document.getElementById("categoryB").style.display = 'block';
+    document.getElementById("subCategoryB").style.display = 'block';
+    document.getElementById("categoryBLabel").style.display = 'block';
+    document.getElementById("subCategoryBLabel").style.display = 'block';
+
     document.getElementById("categoryB").value = dataUser.category;
 
     const category = document.getElementById("categoryB").value;
