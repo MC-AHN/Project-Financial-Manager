@@ -21,7 +21,7 @@ async function render() {
       para.innerHTML = `
       <td>${number}</td>
       <td>${f.title} </td>
-      <td>${f.description} </td>
+      <td>${f.type} </td>
       <td>${f.total}</td>
       <td>${new Date(f.date).toLocaleDateString()}</td>
       <button id="edit-${
