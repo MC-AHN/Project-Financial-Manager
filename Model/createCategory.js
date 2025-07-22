@@ -62,16 +62,28 @@ class Category {
       if (!id) {
         throw new Error("invalid ID, ID are required.");
       }
-      let semuaDataKategoriPelajaran =
-        this.getKategoriPelajaranFromLocalStorage();
+      console.log(id)
 
-      semuaDataKategoriPelajaran = semuaDataKategoriPelajaran.filter(
-        (data) => data.category_id !== id
-      );
+      const allDataCategory = this.getKategoriPelajaranFromLocalStorage()
+      let category = allDataCategory.filter(e => {
+        e.category_id == id
+      })
 
-      this.saveKategoriPelajaranToLocalStorage(semuaDataKategoriPelajaran);
+      console.log(category)
 
-      alert("Data berhasil dihapus.");
+      let validate = confirm("Yakin ingin menghapus Category:", id)
+      if (validate) {
+        let semuaDataKategoriPelajaran =
+          this.getKategoriPelajaranFromLocalStorage();
+  
+        semuaDataKategoriPelajaran = semuaDataKategoriPelajaran.filter(
+          (data) => data.category_id !== id
+        );
+  
+        this.saveKategoriPelajaranToLocalStorage(semuaDataKategoriPelajaran);
+  
+        alert("Data berhasil dihapus.");
+      }
     } catch (error) {
       console.error("Error while deleting kategori pelajaran: ", error);
     }
